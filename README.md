@@ -12,7 +12,7 @@ Here is a preview of the installer :
 
 **You have to enable the TUN module otherwise OpenVPN won't work.** Ask your host if you don't know how to do it. If the TUN module is not enabled, the script will warn you and exit.
 
-You can get a cheap VPS to run this script for $2.50/month worldwide at [Vultr](https://goo.gl/Xyd1Sc) or 3€/month for unlimited bandwidth in France at [PulseHeberg](https://goo.gl/oBhgaj).
+You can get a cheap VPS to run this script for $2.50/month worldwide at [Vultr](https://goo.gl/Xyd1Sc) or 3€/month for unlimited bandwidth in France at [PulseHeberg](https://goo.gl/76yqW5).
 
 First, get the script and make it executable :
 
@@ -46,7 +46,9 @@ The only drawback is that you need to use a recent version of OpenVPN, because s
 
 On the client-side, it's less problematic, but if you want to use an OpenVPN server installed with this script with an old client (\<2.3.3), it won't work. However I don't see why you would use an outdated client.
 
-**TL;DR**, this script is relatively secure, and you can just press enter in the setup. 
+**TL;DR**, this script is relatively secure, and you can just press enter in the setup.
+
+**[A Pull Request](https://github.com/Angristan/OpenVPN-install/pull/96) is currently being worked on to implement the latest OpenVPN 2.4 features.**
 
 ## Compatibility
 
@@ -88,6 +90,7 @@ The script will ask you which DNS resolvers you want to use when connected to th
 Here are the possibilities :
 
 - Current system resolvers, those that are in `/etc/resolv.conf`
+- [Quad9](https://www.quad9.net), recommended, security and privacy oriented, fast worldwide (Anycast servers)
 - [FDN's DNS Servers](http://www.fdn.fr/actions/dns/), recommended if you're in western europe (France)
 - [DNS.WATCH DNS Servers](https://dns.watch/index), recommended if you're in western europe (Germany)
 - [OpenDNS](https://en.wikipedia.org/wiki/OpenDNS), not recommened but fast wordlwide (Anycast servers)
