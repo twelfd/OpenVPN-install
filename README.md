@@ -32,7 +32,7 @@ When OpenVPN is installed, you can run the script again, and you will get the ch
 - Remove a client
 - Uninstall OpenVPN
 
-![](https://lut.im/Z8xfJ8WqyO/3JoPmJK8VRp6zwOE)
+![](https://i.imgur.com/AlW9g7t.png)
 
 ## Why make a fork ?
 
@@ -66,7 +66,7 @@ The script is made to work on these OS and architectures :
 - **Fedora 27** (amd64)
 - **CentOS 6** (i386, amd64)
 - **CentOS 7** (i386, amd64, arm64)
-- **Arch Linux** (i686, amd64)
+- **Arch Linux** (i686, amd64, arm64)
 
 (It should also work on Debian unstable/testing and Ubuntu beta).
 
