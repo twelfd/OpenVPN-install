@@ -1,6 +1,6 @@
 # openvpn-install
 
-[![GitLab CI](https://gitlab.com/angristan/openvpn-install/badges/master/pipeline.svg)](https://gitlab.com/angristan/openvpn-install/pipelines)
+[![Travis CI](https://travis-ci.com/angristan/openvpn-install.svg?branch=master)](https://travis-ci.com/angristan/openvpn-install)
 
 OpenVPN installer for Debian, Ubuntu, Fedora, CentOS and Arch Linux.
 
@@ -36,6 +36,41 @@ When OpenVPN is installed, you can run the script again, and you will get the ch
 In your home directory, you will have `.ovpn` files. These are the client configuration files. Download them from your server and connect using your favorite OpenVPN client.
 
 If you have any question, head to the [FAQ](#faq) first.
+
+### Headless install
+
+It's also possible to run the script headless, e.g. without waiting for user input, in an automated manner.
+
+Example usage:
+```bash
+AUTO_INSTALL=y ./openvpn-install.sh
+
+# or
+
+export AUTO_INSTALL=y
+./openvpn-install.sh
+```
+
+A default set of variables will then be set, by passing the need for user input.
+
+If you want to customise your installation, you can export them or specify them on the same line, as shown above.
+
+- `APPROVE_INSTALL=y`
+- `APPROVE_IP=y`
+- `IPV6_SUPPORT=n`
+- `PORT_CHOICE=1`
+- `PROTOCOL_CHOICE=1`
+- `DNS=1`
+- `COMPRESSION_ENABLED=n`
+- `CUSTOMIZE_ENC=n`
+- `CLIENT=clientname`
+- `PASS=1`
+
+If the server is behind NAT, you can specify its endpoint with the `ENDPOINT` variable. If the endpoint is the public IP address which it is behind, you can use `ENDPOINT=$(curl -4 ifconfig.co)` (the script will default to this). The endpoint can be an IPv4 or a domain.
+
+Other variables can be set depending on your choice (encryption, compression). You can search for them in the `installQuestions()` function of the script.
+
+Password-protected clients are not supported by the headless installation method since user input is expected by Easy-RSA.
 
 ## Features
 
