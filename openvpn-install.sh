@@ -36,7 +36,7 @@ function checkOS () {
 			fi
 		elif [[ "$ID" == "ubuntu" ]];then
 			OS="ubuntu"
-			if [[ ! $VERSION_ID =~ (16.04|18.04) ]]; then
+			if [[ ! $VERSION_ID =~ (16.04|18.04|19.04) ]]; then
 				echo "⚠️ Your version of Ubuntu is not supported."
 				echo ""
 				echo "However, if you're using Ubuntu > 17 or beta, then you can continue."
@@ -591,7 +591,7 @@ function installOpenVPN () {
 			apt-get update
 		fi
 		if [[ "$VERSION_ID" = "16.04" ]]; then
-			echo "deb http://build.openvpn.net/debian/openvpn/stable trusty main" > /etc/apt/sources.list.d/openvpn.list
+			echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" > /etc/apt/sources.list.d/openvpn.list
 			wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg | apt-key add -
 			apt-get update
 		fi
@@ -623,8 +623,7 @@ function installOpenVPN () {
 	local version="3.0.6"
 	wget -O ~/EasyRSA-unix-v${version}.tgz https://github.com/OpenVPN/easy-rsa/releases/download/v${version}/EasyRSA-unix-v${version}.tgz
 	tar xzf ~/EasyRSA-unix-v${version}.tgz -C ~/
-	mv ~/EasyRSA-v${version}/ /etc/openvpn/
-	mv /etc/openvpn/EasyRSA-v${version}/ /etc/openvpn/easy-rsa/
+	mv ~/EasyRSA-v${version} /etc/openvpn/easy-rsa
 	chown -R root:root /etc/openvpn/easy-rsa/
 	rm -f ~/EasyRSA-unix-v${version}.tgz
 

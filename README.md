@@ -6,7 +6,7 @@ OpenVPN installer for Debian, Ubuntu, Fedora, CentOS and Arch Linux.
 
 This script will let you setup your own secure VPN server in just a few seconds.
 
-You can also check out [how to setup WireGuard](https://angristan.xyz/how-to-setup-vpn-server-wireguard-nat-ipv6/), a simple, safer, faster and more modern VPN protocol.
+You can also check out [wireguard-install](https://github.com/angristan/wireguard-install), a simple installer for a simpler, safer, faster and more modern VPN protocol.
 
 ## Usage
 
@@ -104,6 +104,7 @@ The script supports these OS and architectures:
 |   Fedora 28  |   ❔  |  ✅  |   ❔   |   ❔  |
 | Ubuntu 16.04 |   ✅  |  ✅  |   ❌   |   ❌  |
 | Ubuntu 18.04 |   ❌  |  ✅  |   ✅   |   ✅  |
+| Ubuntu 19.04 |   ❌  |  ✅  |   ✅   |   ✅  |
 
 To be noted:
 
